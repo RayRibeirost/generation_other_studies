@@ -122,5 +122,123 @@ console.log(userRay.fullName);
 userRay.fullName = "Jeff Bezos";
 console.log(userRay.fullName) */
 
+///////////////////
 
+/* class Cat {
+  static numOfcats = 0;
+  static species = "catus";
+  name;
+  breed;
+  numLegs = 4; //public field
+  hasTail = true; //good to clean up the constructor
+
+  constructor(name, breed) {
+    this.name =  name;
+    this.breed = breed;
+    Cat.numOfcats += 1;
+  }
+
+  amputate() {
+    this.numLegs--;
+  }
+} */
+
+//////////////
+
+/* class Circle {
+  #radius; //private field
+
+  constructor(radius) {
+    this.#radius = radius;
+  }
+
+  get radius() {
+    return this.#radius;
+  }
+
+}
+
+const myCircle = new Circle(10);
+console.log(myCircle.radius);
+ */
+
+////////////
+
+/* class MyClass {
+  #privateMethod() {
+    console.log("Private method called")
+  }
+  publicMethod() {
+    this.#privateMethod()
+  }
+}
+
+const myClass = new MyClass;
+myClass.publicMethod(); */
+
+//////////
+
+/* class DatabaseConnection {
+  static connection;
+  static {
+    process.env.NODE_ENV === "production"
+      ? this.loadProductionConnection()
+      : this.loadDevelopmentConnection();
+  }
+  static loadProductionConnection() {}
+  static loadDevelopmentConnection() {}
+
+} */
+
+////// Exercise 01
+
+/* class UserProfile {
+  static validateUsername(userName) {
+    if (typeof userName !== "string" || userName.length === 0) throw new Error("Invalid username."); 
+  }
+  static validateEmail(emailAdress) {
+    if (!emailAdress.includes("@")) throw new Error("Invalid email.");
+  }
+  static validateBirthdate(birthDate){
+    if(!birthDate.includes("-")) throw new Error("Invalid birthdate.");
+    const [year, month, day] = birthDate.split("-");
+    if (year.length != 4 || month.length != 2 || day.length != 2) throw new Error("Invalid birthdate.");
+  }
+  constructor(userName, email, birthDate) {
+    UserProfile.validateUsername(userName);
+    UserProfile.validateEmail(email);
+    UserProfile.validateBirthdate(birthDate);
+    this._username = userName;
+    this._email = email;
+    this._birthdate = birthDate;
+  }
+  get username() {
+    return this._username;
+  }
+  get email() {
+    return this._email
+  }
+  get birthdate() {
+    return this._birthdate
+  }
+  set username(userName){
+    UserProfile.validateUsername(userName);
+    this._username = userName;
+  }
+  set email(emailAdress) {
+    UserProfile.validateEmail(emailAdress);
+    this._email = emailAdress;
+  }
+  set birthdate(birthDate) {
+    UserProfile.validateBirthdate(birthDate);
+    this._birthdate = birthDate;
+  }
+}
+
+const user = new UserProfile("john_doe", "john@gmail.com", "1933-12-07");
+console.log(user.birthdate);
+
+ */
+
+////Module 04: The keyword "this"
 
