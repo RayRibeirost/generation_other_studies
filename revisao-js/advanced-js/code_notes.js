@@ -242,3 +242,64 @@ console.log(user.birthdate);
 
 ////Module 04: The keyword "this"
 
+/* const person = {
+  name: "Conan",
+  city: "Los Angeles",
+  sing: function() {
+    return `${this.name} sings La la la`;
+  }
+};
+
+const pSing = person.sing
+console.log(pSing()); */
+
+///////
+
+/* class Cat {
+  constructor(firstName) {
+    this.firstName = firstName
+  }
+  dance(style = "tango") {
+    return `Meow, i am ${this.firstName} and i like to ${style}`;
+  }
+}
+
+const fluffy = new Cat("fluffy");
+const fDance = fluffy.dance();
+console.log(fDance); */
+
+////////
+
+/* function whatIsThis() {
+  console.log(`The value of this is: ${this}`);
+};
+
+const obj = {
+  color: "purple",
+  age: 22,
+  whatIsThis: whatIsThis,
+};
+ */
+
+///////
+/* 
+class Cat {
+  constructor(firstName) {
+    this.firstName = firstName;
+  }
+  static getRandomCat() {
+    console.log(`this is: ${this}`)
+  }
+  dance(style = "tango") {
+    console.log(`this is: ${this}`);
+    return `Meow, i am ${this.firstName} and i like to ${style}`;
+  }
+}
+
+const blue = new Cat("blue");
+blue.dance();
+Cat.getRandomCat();
+const func  = blue.dance;
+func(); */
+
+///////
